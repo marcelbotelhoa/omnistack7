@@ -16,8 +16,6 @@
 
 :point_down: Esse projeto foi desenvolvido com as seguintes tecnologias: :point_down:
 
-:point_right: [![Netlify Status](https://api.netlify.com/api/v1/badges/833ea213-ba4f-451e-9d0c-52b0352feeb0/deploy-status)](https://app.netlify.com/sites/instarocket-lf/deploys) :point_left:
-
 -  [Node.js](https://nodejs.org/en/)
 -  [Express](https://expressjs.com/)
 -  [nodemon](https://github.com/remy/nodemon)
