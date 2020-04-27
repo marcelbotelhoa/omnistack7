@@ -1,5 +1,5 @@
 <h1 align="center">
-      <br> :camera: Pequeno clone do Feed do Instagram<br/>
+      <br> :camera: Clone do Feed do Instagram<br/>
 </h1>
 
 
@@ -39,16 +39,13 @@
 
 bash
 # Clone o Repositório
-$  git clone https://github.com/lucaslombardif/instarocket.git
+$  git clone https://github.com/marcelbotelhoa/omnistack7
 # Va até o diretório do backend, e instale suas dependências
-$ cd instarocket/backend
+$ cd onmistack/backend
 # Instale as dependências
 $ yarn 
 # Rode o backend 
 $ yarn dev 
-
-
-:point_right: Ou vá [aqui](https://instarocket-server.lucaslombardif.codes) 
 
 ### :computer: Rodando o Frontend: 
 
@@ -59,9 +56,6 @@ $ cd frontend
 $ yarn 
 #Inicie a aplicação 
 $ yarn start
-
-
-:point_right: Ou vá [aqui](https://instarocket.lucaslombardif.codes)
 
 ### :iphone: Rodando o Mobile:
 
