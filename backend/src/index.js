@@ -4,9 +4,8 @@ const path = require('path');
 const cors = require('cors');
 
 const app = express();
-
-const server = required('http').Server(app);
-const io = required('socket.io')(server);
+const server = require('http').Server(app);
+const io = require('socket.io')(server);
 
 mongoose.connect('mongodb+srv://admin:m4rc3l@cluster0-zfums.mongodb.net/test?retryWrites=true&w=majority', {
    useNewUrlParser: true,
@@ -14,9 +13,8 @@ mongoose.connect('mongodb+srv://admin:m4rc3l@cluster0-zfums.mongodb.net/test?ret
 });
 
 app.use((req, res, next) => {
-   req.io = io;
-
-   next();
+   req.io =io;
+   next()
 });
 
 app.use(cors());
