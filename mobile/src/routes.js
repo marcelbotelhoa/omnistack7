@@ -1,19 +1,20 @@
-import 'react-native-gesture-handler'
+// import 'react-native-gesture-handler'
+import React from 'react'
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigate } from '@react-navigation/stack';
+import { createStackNavigator } from '@react-navigation/stack';
 
 import Feed from './pages/Feed';
 import New from './pages/New';
 
-const AppStack = createStackNavigate()
+const AppStack = createStackNavigator()
 
 export default function Routes() {
    return (
       <NavigationContainer>
-         <AppStack.Navigation>
-            <AppStack.Screen name={Feed} component={Feed}></AppStack.Screen>
-            <AppStack.Screen name={New} component={New}></AppStack.Screen>
-         </AppStack.Navigation>
+         <AppStack.Navigator>
+            <AppStack.Screen name="Feed" component={Feed} />
+            <AppStack.Screen name="New" component={New} />
+         </AppStack.Navigator>
       </NavigationContainer>
    )
 }
