@@ -1,11 +1,19 @@
-import { createAppContainer, createStackNavigator } from 'react-navigation';
+import 'react-native-gesture-handler'
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigate } from '@react-navigation/stack';
 
-import Feed from './pages/Feed/Feed.js';
-import New from './pages/New/New.js';
+import Feed from './pages/Feed';
+import New from './pages/New';
 
-export default createAppContainer(
-   createStackNavigator({
-      Feed,
-      New,
-   })   
-);
+const AppStack = createStackNavigate()
+
+export default function Routes() {
+   return (
+      <NavigationContainer>
+         <AppStack.Navigation>
+            <AppStack.Screen name={Feed} component={Feed}></AppStack.Screen>
+            <AppStack.Screen name={New} component={New}></AppStack.Screen>
+         </AppStack.Navigation>
+      </NavigationContainer>
+   )
+}
