@@ -3,12 +3,11 @@ import { View, Text } from 'react-native';
 
 import styles from './styles'
 
-const Feed = () => {
+export default Feed = () => {
   return (
     <View>
-      <Text>Feed</Text>
+      <Text style={styles.container}>Feed</Text>
     </View>
   )
 }
 
-export default Feed

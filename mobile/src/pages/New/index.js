@@ -3,12 +3,11 @@ import { View, Text } from 'react-native';
 
 import styles from './styles'
 
-const New = () => {
+export default New = () => {
   return (
     <View>
-      <Text>Feed</Text>
+      <Text style={styles.container}>New</Text>
     </View>
   )
 }
 
-export default New
