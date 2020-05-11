@@ -12,18 +12,11 @@ import send from '../../assets/send.png'
 
 export default Feed = () => {
   const [feeds, setFeeds] = useState([]);
-  const [loading, setLoading] = useState(false);
 
-  async function loadFeeds() {
-    if (loading) return;
-    setLoading(true)
-
-    registerToSocket()
-    const response = await api.get('posts')
-    setFeeds([  ...response.data ])
-
-    setLoading(false)
-  }
+    async function loadFeeds() {
+    const res = await api.get('posts')
+    setFeeds(res.data)
+    }
 
   function registerToSocket() {
     const socket = io('http://10.0.2.2:3333/')
@@ -32,22 +25,24 @@ export default Feed = () => {
       setFeeds([newPost, ... feeds])
     })
 
-    // socket.on('like', likePost => {
-    //   setFeeds(feeds.map(feed =>
-    //     feed._id === likePost._id ? likePost : feed
-    //   )
-    //   )
-    // })
+    socket.on('like', likePost => {
+     // if (feeds, length > 0) {
+        setFeeds(feeds.map(
+          post => post._id = likePost._id ? likePost : post
+        ))
+     // }
+    })
   }
-
-  function handleLike (id) {
-    api.post(`posts/${id}/like`)
-  }
+  registerToSocket()
 
   useEffect(() => {
     loadFeeds();
   }, []);
 
+  function handleLike (id) {
+    api.post(`posts/${id}/like`)
+  }
+  
   return (
     <View style={styles.container}>
       <FlatList
