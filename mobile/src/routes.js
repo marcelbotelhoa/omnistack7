@@ -4,7 +4,7 @@ import { Image, TouchableOpacity } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 
-import Styles from './styles'
+import styles from './styles'
 import Feed from './pages/Feed'
 import New from './pages/New'
 

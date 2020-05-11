@@ -1,13 +1,37 @@
-import React from 'react';
-import { View, Text } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import api from '../../services/api';
+import { View, Text, FlatList } from 'react-native';
 
 import styles from './styles'
 
 export default Feed = () => {
-  return (
-    <View>
-      <Text style={styles.container}>Feed</Text>
-    </View>
+
+    const [feeds, setFeeds] = useState([]);
+    const [loading, setLoading] = useState(false);
+
+    async function loadFeeds() {
+     if(loading) return;
+     setLoading(true)
+
+    const response = await api.get('posts')
+
+    console.log(response.data)
+    setFeeds([ ...feeds, ...response.data ])
+    }
+
+    useEffect(() => {
+      loadFeeds();
+    }, []);
+
+return (
+  <View>
+    <FlatList
+    data={feeds}
+    keyExtractor={feed => String(feed._id)}
+    renderItem={({ item: feed }) => (
+    <Text>{ feed.author }</Text>
+    )}
+    />
+   </View>
   )
 }
-
