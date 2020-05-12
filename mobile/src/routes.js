@@ -31,7 +31,8 @@ const newStyles = {
   title: <Image source={logo} />,
   headerTintColor: '#000',
   headerTitleAlign: 'center',
-  headerBackTitle: null
+  headerBackTitle: null,
+  headerTitle: 'Nova publicação'
 }
 
 const AppStack = createStackNavigator()
