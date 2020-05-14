@@ -4,7 +4,7 @@
 
 
 <div align="center"> 
-     <img alt="Twitter" src="![setup](https://user-images.githubusercontent.com/59174720/81947918-7d3edb00-95d7-11ea-89b8-eb177b8980c7.jpg)" />
+     <img alt="Twitter" src="https://user-images.githubusercontent.com/59174720/81947918-7d3edb00-95d7-11ea-89b8-eb177b8980c7.jpg" />
 </div> 
 
 <p align="center">
